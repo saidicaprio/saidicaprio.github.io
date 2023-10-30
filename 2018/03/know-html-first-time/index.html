@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>初识HTML | Sai&#39;s Cabin</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="初识HTML | Sai&#39;s Cabin">
+    <meta name="twitter:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="初识HTML | Sai&#39;s Cabin">
+    <meta property="og:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    
+    <meta name="author" content="贺嘉炜">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Sai&#39;s Cabin" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://saidicaprio.com/2018/03/know-html-first-time/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Sai&#39;s Cabin 的主页"><img src="/images/avatar.jpg" width="80" alt="Sai&#39;s Cabin logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Sai&#39;s Cabin">Sai&#39;s Cabin</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">落月摇情满江树</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Hi, I'm SaiDicaprio, a iOS Developer from China.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/">首页</a></li>
+            
+              <li class="navigation__item"><a href="./aboutme">关于</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/hjw6160602" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-03-07T02:24:12.000Z" class="post-list__meta--date date">2018-03-07</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/大前端实录/">大前端实录</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">初识HTML</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="一、HTML的基础标签："><a href="#一、HTML的基础标签：" class="headerlink" title="一、HTML的基础标签："></a>一、HTML的基础标签：</h2><h3 id="1-1-html-标签-lt-html-gt"><a href="#1-1-html-标签-lt-html-gt" class="headerlink" title="1.1. html 标签 &lt;html&gt;"></a>1.1. html 标签 <code>&lt;html&gt;</code></h3><p><strong>作用：</strong><br>告诉浏览器这是一个网页，也就是说告诉浏览器我是是一个HTML文档</p>
+<p><strong>注意点：</strong><br>其他所有的标签都必须写在html标签里面，也就是写在html开始标签和结束标签中间。</p>
+<h3 id="1-2-head-标签-lt-head-gt"><a href="#1-2-head-标签-lt-head-gt" class="headerlink" title="1.2. head 标签&lt;head&gt;"></a>1.2. head 标签<code>&lt;head&gt;</code></h3><p><strong>作用：</strong><br>用于给网站添加一些配置信息</p>
+<p><strong>注意点：</strong><br>一般情况下，写在head标签内部的内容都不会给用户查看，也就是说：一般情况下，写在head标签内部的内容我们都看不到。</p>
+<h3 id="1-3-title-标签-lt-title-gt"><a href="#1-3-title-标签-lt-title-gt" class="headerlink" title="1.3. title 标签 &lt;title&gt;"></a>1.3. title 标签 <code>&lt;title&gt;</code></h3><p><strong>作用：</strong><br>专门用于指定网站的标题，并且这个指定的标题将来还会作为用户保存网站的默认标题</p>
+<p><strong>注意点：</strong><br>title标签必须写在head标签里面。</p>
+<h3 id="1-4-body-标签-lt-body-gt"><a href="#1-4-body-标签-lt-body-gt" class="headerlink" title="1.4. body 标签 &lt;body&gt;"></a>1.4. body 标签 <code>&lt;body&gt;</code></h3><p><strong>作用：</strong><br>专门用于定义HTML文档中需要显示给用户查看的内容（文字/图片/音频/视频）</p>
+<p><strong>注意点：</strong></p>
+<ul>
+<li>一定要将需要显示的内容写在body中</li>
+<li>一对html标签中只能有一对body标签</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>百度一下,你就知道<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		能看到我吗?</span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-5-h-系列的标签"><a href="#1-5-h-系列的标签" class="headerlink" title="1.5. h 系列的标签"></a>1.5. h 系列的标签</h3><p>h系列的标签一共有6个，从大到小依次是h1到h6。它的语义是用来给文本添加标题，独占一行。</p>
+<p><strong>格式：</strong><br><code>&lt;h1&gt;我是标题H1&lt;/h1&gt;</code></p>
+<p><strong>注意点：</strong></p>
+<ul>
+<li>在企业开发中，要慎用h系列的标签，特别是h1标签，一般情况下一个界面中只能出现1个h1标签。</li>
+</ul>
+<h3 id="1-6-p-标签-lt-p-gt"><a href="#1-6-p-标签-lt-p-gt" class="headerlink" title="1.6. p 标签 &lt;p&gt;"></a>1.6. p 标签 <code>&lt;p&gt;</code></h3><p>用于告诉浏览器那些文字是一个段落</p>
+<p><strong>注意点：</strong><br>单独占一行</p>
+<h3 id="1-7-hr-标签-lt-hr-gt"><a href="#1-7-hr-标签-lt-hr-gt" class="headerlink" title="1.7. hr 标签 &lt;hr /&gt;"></a>1.7. hr 标签 <code>&lt;hr /&gt;</code></h3><p>在浏览器中显示一条分割线，单独占一行。</p>
+<blockquote>
+<p>hr标签可以写也可以不写，如果不写，那么就是按照HTML的规范来编写的，如果协商，那么就是按照XHTML的规范来编写的。但是在HTML5中，由于HTML5兼容了HTML和XHTML所以写不写都可以。由于hr标签是用来修改样式的所以不推荐使用，一般开发中，添加水平心啊一般都是使用CSS和盒子来做。</p>
+</blockquote>
+<hr>
+<h3 id="1-8-img标签"><a href="#1-8-img标签" class="headerlink" title="1.8. img标签"></a>1.8. img标签</h3><p>作用：在网页上插入一行图片<code>&lt;img src=&quot;图片路径&quot; \&gt;</code><br>写在标签中的 <code>key = value</code> 这种格式的文本称之为标签的属性。</p>
+<p><strong>img标签的标签属性：</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src (source)</td>
+<td style="text-align:center">告诉浏览器需要插入的图片的路径，以便于浏览器到该路径下找到需要插入的图片 </td>
+</tr>
+<tr>
+<td>alt (alternate)</td>
+<td style="text-align:center">规定图片的代替文本，只有在src指定的路径下找不到图片，才会显示alt指定的文本</td>
+</tr>
+<tr>
+<td>title</td>
+<td style="text-align:center">悬停文本，介绍这张图片，只有在鼠标移动到图片上的时候才会显示</td>
+</tr>
+<tr>
+<td>height</td>
+<td style="text-align:center">设置图片的高度</td>
+</tr>
+<tr>
+<td>width</td>
+<td style="text-align:center">设置图片显示的宽度</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点：</strong></p>
+<ul>
+<li>img标签添加的图片默认不是占一整行空间</li>
+<li>如果想让图片等比拉伸，只写高度或者宽度即可</li>
+</ul>
+<h3 id="绝对路径和相对路径"><a href="#绝对路径和相对路径" class="headerlink" title="绝对路径和相对路径"></a>绝对路径和相对路径</h3><ol>
+<li>绝对路径：文件在电脑的具体盘符的位置<code>&lt;img src = &quot;E:/sources/images/pic.jpg&quot;/&gt;</code></li>
+<li>相对路径：文件相对于另一个文件的位置</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>相对路径的类型</th>
+<th style="text-align:center">相对路径例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>相对路径同级</td>
+<td style="text-align:center"><code>&lt;img src = &quot;pic.png&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>相对路径下级</td>
+<td style="text-align:center"><code>&lt;img src = &quot;images/pic.png&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>相对路径上级</td>
+<td style="text-align:center"><code>&lt;img src = &quot;../pic.png&quot;/&gt;</code> (<code>../</code>代表找到上级目录)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点：</strong></p>
+<ul>
+<li>路径中没有中文</li>
+<li>如果通过相对路径来指定，不能跨盘符</li>
+<li>企业开发都用相对路径，不用绝对路径</li>
+</ul>
+<h3 id="1-9-br标签-lt-br-gt"><a href="#1-9-br标签-lt-br-gt" class="headerlink" title="1.9. br标签 &lt;br&gt;"></a>1.9. br标签 <code>&lt;br&gt;</code></h3><p>作用：不另起一个段落换行</p>
+<p><strong>注意点：</strong></p>
+<ul>
+<li>网页中99%需要换行的时候都是因为另起了一个新的段落，所以用p标签来做就够了</li>
+<li>多个br可以连续使用，使用多少次就换多少行</li>
+</ul>
+<h3 id="1-10-a标签-lt-a-gt"><a href="#1-10-a标签-lt-a-gt" class="headerlink" title="1.10.a标签 &lt;a&gt;"></a>1.10.a标签 <code>&lt;a&gt;</code></h3><p>用于从一个页面跳转到另一个页面</p>
+<p><code>&lt;a href=&quot;https://www.baidu.com/&quot;&gt;百度一下&lt;/a&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>a标签的属性</th>
+<th style="text-align:center">属性的作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>href (hypertext reference)</td>
+<td style="text-align:center">指定跳转的目标地址（网络或本地地址）</td>
+</tr>
+<tr>
+<td>target</td>
+<td style="text-align:center">告诉浏览器是否保留原始界面，_blank保留，_self不保留</td>
+</tr>
+<tr>
+<td>title</td>
+<td style="text-align:center">悬停文本（介绍这个链接，只有在鼠标移动到超链接上时才显示）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>a标签也叫做超链接，</li>
+<li>在a标签之间一定要写上文字，如果没有，那么在页面上找不到这个标签。</li>
+<li>a标签不仅仅能够让文字点击，也可以让图片点击</li>
+<li>一个a标签必须有一个href属性，否则不知道跳转到哪</li>
+</ul>
+<h3 id="a标签的其他用法"><a href="#a标签的其他用法" class="headerlink" title="a标签的其他用法"></a>a标签的其他用法</h3><p>假链接：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--  #自动回到顶部 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">"#"</span>&gt;</span>点我一下<span class="tag">&lt;/<span class="name">a</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!--  javascript:不会自动回到顶部 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">"javascript:"</span>&gt;</span>点我一下<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--  #location跳转到指定位置(没有动画)，--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  在页面的指定位置给标签添加一个id属性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">"#location"</span>&gt;</span>点我一下<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span> = <span class="string">"location"</span>&gt;</span> 我是跳转目标 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--  跳转到指定页面的指定位置：--&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 只需要在page2.html添加一个id属性location即可 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">"page2.html#location"</span>&gt;</span> 跳转到指定位置 <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、html中的一些常见问题"><a href="#二、html中的一些常见问题" class="headerlink" title="二、html中的一些常见问题"></a>二、html中的一些常见问题</h2><h3 id="2-1-字符集"><a href="#2-1-字符集" class="headerlink" title="2.1. 字符集"></a>2.1. 字符集</h3><p>如需正确地显示 <code>HTML</code> 页面，浏览器必须知道使用何种字符集。 万维网早期使用的字符集是 <code>ASCII</code>。ASCII 支持 0-9 的数字，大写和小写英文字母表，以及一些特殊字符。</p>
+<p>由于很多国家使用的字符并不属于 <code>ASCII</code>，现代浏览器的默认字符集是 <code>ISO-8859-1</code>。 如果网页使用不同于<code>ISO-8859-1</code> 的字符集，就应该在 <code>&lt;meta&gt;</code>标签进行指定。</p>
+<p>格式：<code>&lt;meta charset = &quot;utf-8&quot;&gt;</code>  如果没有指定网页的字符集或者指定的字符集和保存网页的字符集不同时，会出现乱码现象。</p>
+<h3 id="2-2-标签分类"><a href="#2-2-标签分类" class="headerlink" title="2.2. 标签分类"></a>2.2. 标签分类</h3><h4 id="2-2-1-单标签"><a href="#2-2-1-单标签" class="headerlink" title="2.2.1. 单标签"></a>2.2.1. 单标签</h4><p>只有开始标签，没有结束标签，也就是由一个 <code>&lt;&gt;</code> 组成的，例如：<code>&lt;meta charset = &quot;utf-8&quot;&gt;</code> </p>
+<h4 id="2-2-2-双标签"><a href="#2-2-2-双标签" class="headerlink" title="2.2.2. 双标签"></a>2.2.2. 双标签</h4><p>有开始标签和结束标签，也就是由一个 <code>&lt;&gt;</code> 和一个 <code>&lt;\&gt;</code>  组成的 例如：<code>&lt;head&gt; &lt;/head&gt;</code></p>
+<h4 id="2-2-3-标签分类关系："><a href="#2-2-3-标签分类关系：" class="headerlink" title="2.2.3. 标签分类关系："></a>2.2.3. 标签分类关系：</h4><p>并列关系（兄弟/平级）：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span> = <span class="string">"utf - 8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>我是标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>嵌套关系（父子/上下级）：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span> = <span class="string">"utf - 8"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>我是标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-3-DTD文档声明"><a href="#2-3-DTD文档声明" class="headerlink" title="2.3. DTD文档声明"></a>2.3. DTD文档声明</h3><p>由于HTML有很多个版本的规范，每个版本的规范之间又有一定的差异，所以为了让浏览器能够正确的编译和解析网页，需要在HTML文件的第一行告诉浏览器，当前这个网页是<code>用哪一个版本的HTML规范来编写的</code>。</p>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li><code>&lt;!DOCTYPE&gt;</code>声明必须是TML文档的第一行，位于<code>&lt;html&gt;</code>标签之前</li>
+<li><code>&lt;!DOCTYPE&gt;</code> 不是HTML标签</li>
+<li><code>&lt;!DOCTYPE&gt;</code> 声明更没有结束标签</li>
+<li><code>&lt;!DOCTYPE&gt;</code> 声明对大小写不敏感</li>
+<li>这个声明浏览器会看，但是并不是完全依赖于这个声明，浏览器有一套自己的默认的处理机制</li>
+</ul>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/03/introduce-css/" title="CSS简介和总结">CSS简介和总结</a></h2>
+                <p class="excerpt">
+                
+                一、CSS的属性1.1. 文字属性1.1.1. font-style规定文字样式的属性
+
+normal: 正常的，默认就是正常的 快捷键: fs
+italic: 倾斜的 快捷键: fsn
+
+1.1.2. font-weight规定文字粗细的属性
+
+bold 加粗 快捷键: fwb
+bolder 比加
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-03-09T08:18:59.000Z" class="post-list__meta--date date">2018-03-09</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/大前端实录/">大前端实录</a>
+</span><a class="btn-border-small" href="/2018/03/introduce-css/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/09/配置SourceTree脚本/" title="配置SourceTree脚本">配置SourceTree脚本</a></h2>
+                <p class="excerpt">
+                
+                首先我们来看下SourceTree的Custom Actions是什么？Custom Actions是SourceTree提供给用户去执行自己的一些脚本的一些设置。首先打开SourceTree，点击菜单栏上的Preferences（或者使用Command＋，），点击Custom Actions就可以
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-09-12T08:37:46.000Z" class="post-list__meta--date date">2017-09-12</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/iOS知识库/">iOS知识库</a>
+</span><a class="btn-border-small" href="/2017/09/配置SourceTree脚本/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2023 - 本站使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题,
+        由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>

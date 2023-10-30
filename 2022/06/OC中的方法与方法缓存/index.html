@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>OC中的方法与方法缓存 | Sai&#39;s Cabin</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="OC中的方法与方法缓存 | Sai&#39;s Cabin">
+    <meta name="twitter:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="OC中的方法与方法缓存 | Sai&#39;s Cabin">
+    <meta property="og:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    
+    <meta name="author" content="贺嘉炜">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Sai&#39;s Cabin" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://saidicaprio.com/2022/06/OC中的方法与方法缓存/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Sai&#39;s Cabin 的主页"><img src="/images/avatar.jpg" width="80" alt="Sai&#39;s Cabin logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Sai&#39;s Cabin">Sai&#39;s Cabin</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">落月摇情满江树</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Hi, I'm SaiDicaprio, a iOS Developer from China.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/">首页</a></li>
+            
+              <li class="navigation__item"><a href="./aboutme">关于</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/hjw6160602" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2022-06-17T06:08:56.000Z" class="post-list__meta--date date">2022-06-17</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/iOS-底层原理/">iOS 底层原理</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">OC中的方法与方法缓存</h1>
+  </header>
+
+  <section class="post">
+    <h1 id="方法与方法缓存"><a href="#方法与方法缓存" class="headerlink" title="方法与方法缓存"></a>方法与方法缓存</h1><h2 id="一、方法的底层结构"><a href="#一、方法的底层结构" class="headerlink" title="一、方法的底层结构"></a>一、方法的底层结构</h2><h3 id="1-1-method-t"><a href="#1-1-method-t" class="headerlink" title="1.1 method_t"></a>1.1 <code>method_t</code></h3><h4 id="method-t是对方法-函数的封装"><a href="#method-t是对方法-函数的封装" class="headerlink" title="method_t是对方法\函数的封装"></a>method_t是对方法\函数的封装</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">method_t</span> &#123;</span></span><br><span class="line">  SEL name; <span class="comment">// 函数名</span></span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">char</span> *types;<span class="comment">// 编码（返回值类型、参数类型）</span></span><br><span class="line">  IMP imp;<span class="comment">// 指向函数的指针（函数地址）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="IMP代表函数的具体实现"><a href="#IMP代表函数的具体实现" class="headerlink" title="IMP代表函数的具体实现"></a>IMP代表函数的具体实现</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">id</span> _Nullable (*IMP)(<span class="keyword">id</span> _Nonnull, SEL _Nonnull, ...)</span><br></pre></td></tr></table></figure>
+<h4 id="SEL代表方法-函数名，一般叫做选择器，底层结构跟char-类似"><a href="#SEL代表方法-函数名，一般叫做选择器，底层结构跟char-类似" class="headerlink" title="SEL代表方法\函数名，一般叫做选择器，底层结构跟char *类似"></a>SEL代表方法\函数名，一般叫做选择器，底层结构跟char *类似</h4><p>可以通过<code>@selector()</code>和<code>sel_registerName()</code>获得<br>可以通过<code>sel_getName()</code>和<code>NSStringFromSelector()</code>转成字符串<br>不同类中相同名字的方法，所对应的方法选择器是相同的</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_selector *SEL;</span><br></pre></td></tr></table></figure>
+<h4 id="types包含了函数返回值、参数编码的字符串"><a href="#types包含了函数返回值、参数编码的字符串" class="headerlink" title="types包含了函数返回值、参数编码的字符串"></a>types包含了函数返回值、参数编码的字符串</h4><p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/test/1655049942.jpg" width="600/"></p>
+<h3 id="1-2-Type-Encoding"><a href="#1-2-Type-Encoding" class="headerlink" title="1.2 Type Encoding"></a>1.2 Type Encoding</h3><p><code>iOS</code>中提供了一个叫做<code>@encode</code>的指令，可以将具体的类型表示成字符串编码</p>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/test/1655050008.jpg" width="1000/"></p>
+<p><code>v16@0:8</code> 的含义：</p>
+<ul>
+<li><code>v</code> 返回值<code>void</code>  </li>
+<li><code>16</code>代表参数的总字节数 ：  <code>16</code>个字节</li>
+<li><code>@</code>代表一个<code>id</code>类型 0 代表从第0个字节开始</li>
+<li>冒号<code>：</code>代表 一个 <code>selector</code> 代表从第8个字节开始</li>
+</ul>
+<h2 id="二、方法缓存"><a href="#二、方法缓存" class="headerlink" title="二、方法缓存"></a>二、方法缓存</h2><p><code>Class</code>内部结构中有个方法缓存（<code>cache_t</code>），用散列表（<code>哈希表</code>）来缓存曾经调用过的方法，可以提高方法的查找速度。</p>
+<p>不用去 <code>method_list_t</code> 里面去一个一个查找了。</p>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/test/1655051179.jpg" width="800/"></p>
+<p>利用 <code>@selector(test)</code> &amp; <code>mask</code>(<code>mask</code> 是散列表的长度-1)</p>
+<h3 id="缓存查找"><a href="#缓存查找" class="headerlink" title="缓存查找"></a>缓存查找</h3><ul>
+<li><code>objc-cache.mm</code></li>
+<li><code>bucket_t * cache_t::find(cache_key_t k, id receiver)</code></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bucket_t</span> * <span class="keyword">cache_t</span>::find(<span class="keyword">cache_key_t</span> k, id receiver) &#123;</span><br><span class="line">    assert(k != <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bucket_t</span> *b = buckets();</span><br><span class="line">    <span class="keyword">mask_t</span> m = mask();</span><br><span class="line">    <span class="keyword">mask_t</span> begin = cache_hash(k, m);</span><br><span class="line">    <span class="keyword">mask_t</span> i = begin;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (b[i].key() == <span class="number">0</span>  ||  b[i].key() == k) &#123;</span><br><span class="line">            <span class="keyword">return</span> &amp;b[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">while</span> ((i = cache_next(i, m)) != begin);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// hack</span></span><br><span class="line">    Class cls = (Class)((<span class="keyword">uintptr_t</span>)<span class="keyword">this</span> - offsetof(objc_class, cache));</span><br><span class="line">    <span class="keyword">cache_t</span>::bad_cache(receiver, (SEL)k, cls);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到苹果的散列算法还是比较简单的 ，根据索引<code>i</code>去 <code>buckets</code> 里面取，取出来的<code>bucket</code> 的<code>key</code> 会去和传进来的<code>@selector()</code> 去做对比 如果相等 那么直接返回</p>
+<p>如果不相等 那么就会去调用下面的<code>cache_next</code> ，</p>
+<p>这个方法在不同平台的实现是不一样的 在<code>arm64</code>架构下 就是 将i-1</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> __arm64__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CACHE_END_MARKER 0</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">inline</span> mask_t <span class="title">cache_next</span><span class="params">(<span class="keyword">mask_t</span> i, <span class="keyword">mask_t</span> mask)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i ? i<span class="number">-1</span> : mask;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一旦<code>扩容</code>之后 会把散列表中的缓存清楚掉</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="keyword">cache_t</span>::reallocate(<span class="keyword">mask_t</span> oldCapacity, <span class="keyword">mask_t</span> newCapacity) &#123;</span><br><span class="line">    <span class="keyword">bool</span> freeOld = canBeFreed();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bucket_t</span> *oldBuckets = buckets();</span><br><span class="line">    <span class="keyword">bucket_t</span> *newBuckets = allocateBuckets(newCapacity);</span><br><span class="line">    </span><br><span class="line">    assert(newCapacity &gt; <span class="number">0</span>);</span><br><span class="line">    assert((<span class="keyword">uintptr_t</span>)(<span class="keyword">mask_t</span>)(newCapacity<span class="number">-1</span>) == newCapacity<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">    setBucketsAndMask(newBuckets, newCapacity - <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (freeOld) &#123;</span><br><span class="line">        cache_collect_free(oldBuckets, oldCapacity);</span><br><span class="line">        cache_collect(<span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>cache_collect_free(oldBuckets, oldCapacity)</code> 就是清除旧的缓存<br> <code>mask</code> 是长度减一</p>
+<p>假如有一个<code>Person</code>类需要调用一个方法<code>Test</code> 那么 它的调用流程大致如下：</p>
+<p>先看自己的类对象<code>Person</code> 缓存<code>cache_t</code>当中有没有方法：</p>
+<ul>
+<li>有：直接调用</li>
+<li>没有：去<code>method_list_t</code>里面去找 <ul>
+<li>找到了：缓存到自己的  <code>cache_t</code> 当中</li>
+<li>没找到：去父类的<code>cache_t</code>当中去找<ul>
+<li>父类中找到了： 缓存到自己的  <code>cache_t</code> 当中</li>
+<li>父类中没找到：去父类的<code>method_list_t</code>里面去找 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>如果父类的<code>method_list_t</code>找到了方法 那么继续缓存到自己的  <code>cache_t</code> 当中 没炸到就继续一层一层去 父类当中寻找方法。</p>
+<p>直到<code>lookUpImpOrForward</code>找到方法之后就会填充缓存。</p>
+<p>下面的 <code>log_and_fill_cache</code> 方法则是 具体调用到某个函数之后，填充缓存的内容：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">log_and_fill_cache</span><span class="params">(Class cls, IMP imp, SEL sel, id receiver, Class implementer)</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SUPPORT_MESSAGE_LOGGING</span></span><br><span class="line">    <span class="keyword">if</span> (objcMsgLogEnabled) &#123;</span><br><span class="line">        <span class="keyword">bool</span> cacheIt = logMessageSend(implementer-&gt;isMetaClass(), </span><br><span class="line">                                      cls-&gt;nameForLogging(),</span><br><span class="line">                                      implementer-&gt;nameForLogging(), </span><br><span class="line">                                      sel);</span><br><span class="line">        <span class="keyword">if</span> (!cacheIt) <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    cache_fill (cls, sel, imp, receiver);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2022/06/NSObject-Class的结构/" title="NSObject Class的结构">NSObject Class的结构</a></h2>
+                <p class="excerpt">
+                
+                Class的结构objc_class
+在最开始 bits字段存储的仅仅是  class_ro_t 在后来 会重新 分配一块内存给 class_rw_t 用来存储 运行时动态添加的 方法、属性、协议等内容。
+12345678910111213141516171819202122232425262728
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2022-06-17T05:58:33.000Z" class="post-list__meta--date date">2022-06-17</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/iOS-底层原理/">iOS 底层原理</a>
+</span><a class="btn-border-small" href="/2022/06/NSObject-Class的结构/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2023 - 本站使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题,
+        由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>深入理解Runtime | Sai&#39;s Cabin</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="深入理解Runtime | Sai&#39;s Cabin">
+    <meta name="twitter:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="深入理解Runtime | Sai&#39;s Cabin">
+    <meta property="og:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    
+    <meta name="author" content="贺嘉炜">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Sai&#39;s Cabin" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://saidicaprio.com/2019/05/深入理解Runtime/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Sai&#39;s Cabin 的主页"><img src="/images/avatar.jpg" width="80" alt="Sai&#39;s Cabin logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Sai&#39;s Cabin">Sai&#39;s Cabin</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">落月摇情满江树</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Hi, I'm SaiDicaprio, a iOS Developer from China.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/">首页</a></li>
+            
+              <li class="navigation__item"><a href="./aboutme">关于</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/hjw6160602" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-05-17T08:52:02.000Z" class="post-list__meta--date date">2019-05-17</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">深入理解Runtime</h1>
+  </header>
+
+  <section class="post">
+    <p><code>rw = cls-&gt;data()</code></p>
+<p>存储了当前类在编译期就已经确定的属性、方法以及遵循的协议</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> class_ro_t &#123;  </span><br><span class="line">    uint32_t flags;</span><br><span class="line">    uint32_t instanceStart;</span><br><span class="line">    uint32_t instanceSize;</span><br><span class="line">    uint32_t reserved;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> uint8_t * ivarLayout;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> * name;</span><br><span class="line">    method_list_t * baseMethodList;</span><br><span class="line">    protocol_list_t * baseProtocols;</span><br><span class="line">    <span class="keyword">const</span> ivar_list_t * ivars;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> uint8_t * weakIvarLayout;</span><br><span class="line">    property_list_t *baseProperties;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>baseMethodList，baseProtocols，ivars，baseProperties三个都是以为数组。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//类中的属性、方法还有遵循的协议等信息都保存在 class_rw_t 中：</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> class_rw_t &#123;</span><br><span class="line">	<span class="comment">// Be warned that Symbolication knows the layout of this structure.</span></span><br><span class="line">    uint32_t flags;</span><br><span class="line">    uint32_t version;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> class_ro_t *ro; <span class="comment">// 指向只读的结构体,存放类初始信息</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     这三个都是二位数组，是可读可写的，包含了类的初始内容、分类的内容。</span></span><br><span class="line"><span class="comment">     methods中，存储 method_list_t ----&gt; method_t</span></span><br><span class="line"><span class="comment">     二维数组，method_list_t --&gt; method_t</span></span><br><span class="line"><span class="comment">     这三个二位数组中的数据有一部分是从class_ro_t中合并过来的。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    method_array_t methods; <span class="comment">// 方法列表（类对象存放对象方法，元类对象存放类方法）</span></span><br><span class="line">    property_array_t properties; <span class="comment">// 属性列表</span></span><br><span class="line">    protocol_array_t protocols; <span class="comment">//协议列表</span></span><br><span class="line"></span><br><span class="line">    Class firstSubclass;</span><br><span class="line">    Class nextSiblingClass;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-1-分类-Category"><a href="#3-1-分类-Category" class="headerlink" title="3.1 分类 Category"></a>3.1 分类 Category</h4><ul>
+<li>实例方法</li>
+<li>类方法</li>
+<li>属性</li>
+<li>协议</li>
+</ul>
+<p><code>struct category_t</code></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> attachCategoriesClass &#123;</span><br><span class="line">	<span class="comment">//1. malloc 分配内存</span></span><br><span class="line">	<span class="comment">//2. 放在3个对应数组中</span></span><br><span class="line">	<span class="comment">// protocol_list</span></span><br><span class="line">	<span class="comment">// method_list</span></span><br><span class="line">	<span class="comment">// props_list</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>memmove、memcopy</code>方法会将 原来的方法列表舒服往后移动分类方法size大小的内存空间，然后把分类里的分类数据利用<code>memcopy</code>方法拷贝到<code>class_rw_t</code>的<code>method_list</code>中去</p>
+<p><code>memcopy</code>将所有分类的方法列表拷贝到类对象的方法列表中去<br>如果分类的方法和主类的方法的名字相同 那么会优先调用分类的方法</p>
+<p>在分类里添加属性，只会添加set和get方法，但是不会添加成员变量，因为分类里没有<code>ivars</code></p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/05/多线程与锁/" title="iOS中的多线程与锁">iOS中的多线程与锁</a></h2>
+                <p class="excerpt">
+                
+                一、 iOS中的多线程方案
+1.GCD有2个概念需要了解：同步/步、队列
+同步和异步主要影响：能不能开启新的线程
+同步：在当前线程中执行任务，不具备开启新线程的能力
+异步：在新的线程中执行任务，具备开启新线程的能力
+
+并发和串行主要影响：任务的执行方式
+并发：多个任务并发（同时）执行
+串行：一个任务
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-05-17T08:52:02.000Z" class="post-list__meta--date date">2019-05-17</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
+</span><a class="btn-border-small" href="/2019/05/多线程与锁/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/05/Block的本质/" title="Block的本质">Block的本质</a></h2>
+                <p class="excerpt">
+                
+                其实block本质上也是一个OC对象，它内部也有个isa指针block是封装了函数调用以及函数调用环境的OC对象
+1.block的底层结构如下图所示
+
+12345678910111213141516struct __main_block_impl_0 &amp;#123;    struct __block
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-05-16T10:13:26.000Z" class="post-list__meta--date date">2019-05-16</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/iOS-底层原理/">iOS 底层原理</a>
+</span><a class="btn-border-small" href="/2019/05/Block的本质/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2023 - 本站使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题,
+        由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>配置SourceTree脚本 | Sai&#39;s Cabin</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="配置SourceTree脚本 | Sai&#39;s Cabin">
+    <meta name="twitter:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="配置SourceTree脚本 | Sai&#39;s Cabin">
+    <meta property="og:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    
+    <meta name="author" content="贺嘉炜">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Sai&#39;s Cabin" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://saidicaprio.com/2017/09/配置SourceTree脚本/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Sai&#39;s Cabin 的主页"><img src="/images/avatar.jpg" width="80" alt="Sai&#39;s Cabin logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Sai&#39;s Cabin">Sai&#39;s Cabin</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">落月摇情满江树</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Hi, I'm SaiDicaprio, a iOS Developer from China.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/">首页</a></li>
+            
+              <li class="navigation__item"><a href="./aboutme">关于</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/hjw6160602" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-09-12T08:37:46.000Z" class="post-list__meta--date date">2017-09-12</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/iOS知识库/">iOS知识库</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">配置SourceTree脚本</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="首先我们来看下SourceTree的Custom-Actions是什么？"><a href="#首先我们来看下SourceTree的Custom-Actions是什么？" class="headerlink" title="首先我们来看下SourceTree的Custom Actions是什么？"></a>首先我们来看下SourceTree的Custom Actions是什么？</h2><p>Custom Actions是SourceTree提供给用户去执行自己的一些脚本的一些设置。首先打开SourceTree，点击菜单栏上的Preferences（或者使用Command＋，），点击Custom Actions就可以看到了。样式如下图</p>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/imgs/source_tree_01.png" alt="SourceTree01"> </p>
+<p>可以看到上面装载了一些我自定义的脚本。以第一个脚本为例，”lvUpdateTags“为脚本的名字，第二部分为脚本的路径，第三部分为脚本执行所需参数，第四部分为在自定义脚本中不会用到，可以忽略。脚本内设置如下图，可以点击打开打印全部输出等。Parameters部分所传参数可以自定义，也可以传SourceTree定义好的，在图上都给出了解释。</p>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/imgs/source_tree_02.png" alt="SourceTree02"> </p>
+<p>如图所示的方式可以配置自定义的脚本，但是如果想简化这个过程，把你的所有配置打包，一个命令安装，就需要其他方式。</p>
+<h2 id="一行命令配置所有自定义脚本"><a href="#一行命令配置所有自定义脚本" class="headerlink" title="一行命令配置所有自定义脚本"></a>一行命令配置所有自定义脚本</h2><p>首先找到SourceTree存储这些命令的文件，如下图</p>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/imgs/source_tree_03.png" alt="SourceTree03"> </p>
+<p>上面的路径就是SourceTree存储自定义脚本的文件，文件的内容如下图。</p>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/imgs/source_tree_04.png" alt="SourceTree04"> </p>
+<p>这就是actions.plist所存储的内容，可以看到标注红框的地方都是自定义脚本的名字或路径。<br>这样理解就是只需要把整个plist文件按照自己的配置部署好，那么SourceTree就可以读取到所有的自定义脚本。那么该用什么格式存储信息呢，又该怎么写入plist中呢？<br>这里我们选用json文件存储，首先json是key－value存储的，很方便理解和添加；其次json文件可以通过程序解析成字典，然后在程序中将读入的json转化为字典，写入plst文件即大功告成了。<br>下面是json文件源码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;lvUpdateTags&quot;,</span><br><span class="line">        &quot;target&quot;: &quot;~/SourceTreeScript/lvUpdateTags.sh&quot;,</span><br><span class="line">        &quot;params&quot;: &quot;$REPO&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;lvUpdatePod&quot;,</span><br><span class="line">        &quot;target&quot;: &quot;~/SourceTreeScript/lvUpdatePod.sh&quot;,</span><br><span class="line">        &quot;params&quot;: &quot;$REPO&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;lvUpdatePod_NoRepoUpdate&quot;,</span><br><span class="line">        &quot;target&quot;: &quot;~/SourceTreeScript/lvUpdatePod_NoRepoUpdate.sh&quot;,</span><br><span class="line">        &quot;params&quot;: &quot;$REPO&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;lvUpdateRemotes&quot;,</span><br><span class="line">        &quot;target&quot;: &quot;~/SourceTreeScript/lvUpdateRemotes.sh&quot;,</span><br><span class="line">        &quot;params&quot;: &quot;$REPO&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;lvOpenWorkspace&quot;,</span><br><span class="line">        &quot;target&quot;: &quot;~/SourceTreeScript/lvOpenWorkspace.sh&quot;,</span><br><span class="line">        &quot;params&quot;: &quot;$REPO&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;lvCreateMergeRequest&quot;,</span><br><span class="line">        &quot;target&quot;: &quot;~/SourceTreeScript/lvCreateMergeRequest.sh&quot;,</span><br><span class="line">        &quot;params&quot;: &quot;$REPO&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h2 id="解析配置Custom-Actions的命令"><a href="#解析配置Custom-Actions的命令" class="headerlink" title="解析配置Custom Actions的命令"></a>解析配置Custom Actions的命令</h2><p>为了达到一行命令配置Custom Actions，那就需要写一个命令，利用Xcode完成一个命令的编写。<br>下面是源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"> #import &lt;Foundation/Foundation.h&gt;</span><br><span class="line">     NSMutableDictionary *getActionDic(NSString * name, NSString *params, NSString *target) &#123;</span><br><span class="line">    NSMutableDictionary *action = [NSMutableDictionary dictionaryWithDictionary:@&#123;@&quot;fileAction&quot;:@(0), @&quot;logAction&quot;:@(0), @&quot;name&quot;:name, @&quot;params&quot;:params, @&quot;repoAction&quot;:@(1), @&quot;separateWindow&quot;:@(0), @&quot;shortcutKeyCode&quot;:@&quot;-1&quot;, @&quot;shortcutKeyDisplay&quot;:@&quot;&quot;, @&quot;shortcutKeyModifiers&quot;:@(0), @&quot;showFullOutput&quot;:@(1), @&quot;target&quot;:target&#125;];</span><br><span class="line">    return action;</span><br><span class="line">     &#125;</span><br><span class="line">     int main(int argc, const char * argv[]) &#123;</span><br><span class="line">    @autoreleasepool &#123;</span><br><span class="line">        if (argc &lt; 2) &#123;</span><br><span class="line">            printf(&quot;请输入一个配置自定义脚本的json文件路径\n&quot;);</span><br><span class="line">            return 1;</span><br><span class="line">        &#125;</span><br><span class="line">        NSError *jsonError = nil;</span><br><span class="line">        NSString *jsonFilePath = [NSString stringWithFormat:@&quot;%s&quot;, argv[1]];</span><br><span class="line">        id jsonObject = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jsonFilePath] options:NSJSONReadingMutableContainers error:&amp;jsonError];</span><br><span class="line">        if ([jsonObject isKindOfClass:[NSArray class]]) &#123;</span><br><span class="line">            NSMutableArray *actions = [NSMutableArray array];</span><br><span class="line">            for (NSDictionary *actionDic in jsonObject) &#123;</span><br><span class="line">                NSString *name = [actionDic objectForKey:@&quot;name&quot;];</span><br><span class="line">                NSString *params = [actionDic objectForKey:@&quot;params&quot;];</span><br><span class="line">                NSString *target = [actionDic objectForKey:@&quot;target&quot;];</span><br><span class="line">                if (!name || !params || !target) &#123;</span><br><span class="line">                    printf(&quot;获取不到应该有的参数\n&quot;);</span><br><span class="line">                    return 1;</span><br><span class="line">                &#125;else &#123;</span><br><span class="line">                    [actions addObject:getActionDic(name, params, target)];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            NSString *configPath = [@&quot;~/Library/Application Support/SourceTree/actions.plist&quot; stringByStandardizingPath];</span><br><span class="line">            NSMutableData *data = [NSMutableData data];</span><br><span class="line">            NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];</span><br><span class="line">            [archiver setOutputFormat:NSPropertyListXMLFormat_v1_0];</span><br><span class="line">            [archiver encodeObject:actions forKey:@&quot;root&quot;];</span><br><span class="line">            [archiver finishEncoding];</span><br><span class="line">            if(data) &#123;</span><br><span class="line">                BOOL result = [data writeToFile:configPath atomically:YES];</span><br><span class="line">                if (result) &#123;</span><br><span class="line">                    NSArray *readActions = [NSKeyedUnarchiver unarchiveObjectWithFile:configPath];</span><br><span class="line">                    printf(&quot;目前plist中已经存在的action\n%s\n&quot;, [[readActions description] UTF8String]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                printf(&quot;写入错误\n&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再完成上面两步操作之后就可以在终端中执行configActions命令，再跟一个json文件的路径参数，即可完成Custom Actions的配置。</p>
+<h2 id="最终版简化命令"><a href="#最终版简化命令" class="headerlink" title="最终版简化命令"></a>最终版简化命令</h2><p>需要用到setup.sh文件，内容如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">    echo '*************************'</span><br><span class="line">    echo "setup start"</span><br><span class="line">    if [[ -d "$HOME/SourceTreeScript" ]]; then</span><br><span class="line">      rm -rf "$HOME/SourceTreeScript"</span><br><span class="line">   fi</span><br><span class="line">   mkdir "$HOME/SourceTreeScript"</span><br><span class="line">   cd "`pwd`/SourceTreeScriptTemp"</span><br><span class="line">   for file in `find . -name "*.sh"`</span><br><span class="line">   do</span><br><span class="line">     fileFullName=`basename $file`</span><br><span class="line">     echo "$fileFullName"</span><br><span class="line">     if [[ ! "$fileFullName" = "setup.sh" ]]; then</span><br><span class="line">     	cp $file "$HOME/SourceTreeScript"</span><br><span class="line">     fi</span><br><span class="line">   done</span><br><span class="line">   cp "`pwd`/create_mergerequest" "/usr/local/bin/create_mergerequest"</span><br><span class="line">   "`pwd`/configActions" "`pwd`/config.json"</span><br><span class="line">   echo '*************************'</span><br><span class="line">   cd -</span><br></pre></td></tr></table></figure>
+<p>将源码上传到git，下载代码和部署一条龙完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf SourceTreeScriptTemp &amp;&amp; git clone http://lvioscode.com/ios_support_tools/SourceTreeScript.git SourceTreeScriptTemp &amp;&amp; source &quot;`pwd`/SourceTreeScriptTemp/setup.sh&quot; &amp;&amp; rm -rf SourceTreeScriptTemp</span><br></pre></td></tr></table></figure>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/03/know-html-first-time/" title="初识HTML">初识HTML</a></h2>
+                <p class="excerpt">
+                
+                一、HTML的基础标签：1.1. html 标签 &amp;lt;html&amp;gt;作用：告诉浏览器这是一个网页，也就是说告诉浏览器我是是一个HTML文档
+注意点：其他所有的标签都必须写在html标签里面，也就是写在html开始标签和结束标签中间。
+1.2. head 标签&amp;lt;head&amp;gt;作用：用于给
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-03-07T02:24:12.000Z" class="post-list__meta--date date">2018-03-07</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/大前端实录/">大前端实录</a>
+</span><a class="btn-border-small" href="/2018/03/know-html-first-time/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/07/ArKit简介/" title="ARKit简介">ARKit简介</a></h2>
+                <p class="excerpt">
+                
+                 
+ARKit是WWDC发布iOS11系统所新增框架。ARKit是一个移动AR平台，提供高层次的API，可在iOS 11 + A9芯片及以上（iPhone 6s起）上使用。
+Session 602 Introducing ARKit: Augmented Reality for iOS
+https:
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-07-15T07:31:40.000Z" class="post-list__meta--date date">2017-07-15</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
+</span><a class="btn-border-small" href="/2017/07/ArKit简介/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2023 - 本站使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题,
+        由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>现代化OC语法 | Sai&#39;s Cabin</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="现代化OC语法 | Sai&#39;s Cabin">
+    <meta name="twitter:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="现代化OC语法 | Sai&#39;s Cabin">
+    <meta property="og:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    
+    <meta name="author" content="贺嘉炜">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Sai&#39;s Cabin" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://saidicaprio.com/2017/04/现代化OC语法/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Sai&#39;s Cabin 的主页"><img src="/images/avatar.jpg" width="80" alt="Sai&#39;s Cabin logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Sai&#39;s Cabin">Sai&#39;s Cabin</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">落月摇情满江树</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Hi, I'm SaiDicaprio, a iOS Developer from China.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/">首页</a></li>
+            
+              <li class="navigation__item"><a href="./aboutme">关于</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/hjw6160602" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-04-11T01:31:10.000Z" class="post-list__meta--date date">2017-04-11</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">现代化OC语法</h1>
+  </header>
+
+  <section class="post">
+    <p>随着Swift的加入，OC在不也在不断向着新的编程方式靠拢，虽然OC是我很喜欢的一门很优雅的语言，但是毕竟编程讲究的是效率，时代的大浪下，OC的很多写法也顺应大潮做出了一些相应的改变。<br>下面我们来看一下都有哪些地方现代化OC语法做出的改变。</p>
+<p>##1. 将一些单纯的方法转换为属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)isGrade;</span><br><span class="line">@property (NS_NONATOMIC_IOSONLY, getter=isGrade, readonly) BOOL grade;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-将一些中括号调用变为属性调用"><a href="#2-将一些中括号调用变为属性调用" class="headerlink" title="2. 将一些中括号调用变为属性调用"></a>2. 将一些中括号调用变为属性调用</h2><h4 id="2-1-get方法调用的修改"><a href="#2-1-get方法调用的修改" class="headerlink" title="2.1. get方法调用的修改"></a>2.1. get方法调用的修改</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">NSBundle</span> mainBundle] infoDictionary]</span><br><span class="line">[<span class="built_in">NSBundle</span> mainBundle].infoDictionary</span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UIScreen</span> mainScreen] bounds]</span><br><span class="line">[<span class="built_in">UIScreen</span> mainScreen].bounds</span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[[<span class="built_in">UIApplication</span> sharedApplication] delegate] window]</span><br><span class="line">[<span class="built_in">UIApplication</span> sharedApplication].delegate.window</span><br></pre></td></tr></table></figure>
+<p>类似的还有<code>length</code>、<code>count</code>等等</p>
+<h4 id="2-2-set方法调用的修改"><a href="#2-2-set方法调用的修改" class="headerlink" title="2.2. set方法调用的修改"></a>2.2. set方法调用的修改</h4><p>将<code>setImage</code>这种类似的<code>setter</code>方法转换为.语法的<code>setter</code>赋值<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">image = [[<span class="built_in">UIImageView</span> alloc] init];</span><br><span class="line">[image setImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"name.png"</span>]];</span><br><span class="line">image.image = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"name.png"</span>];</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[btn setBackgroundColor:[<span class="built_in">UIColor</span> redColor]];</span><br><span class="line">btn.backgroundColor = [<span class="built_in">UIColor</span> redColor];</span><br></pre></td></tr></table></figure>
+<h2 id="3-将初始化-init-方法的返回值从-id-转换为转换为-instancetype"><a href="#3-将初始化-init-方法的返回值从-id-转换为转换为-instancetype" class="headerlink" title="3.将初始化 init 方法的返回值从 id 转换为转换为 instancetype"></a>3.将初始化 init 方法的返回值从 id 转换为转换为 instancetype</h2><h2 id="4-枚举宏定义的改变"><a href="#4-枚举宏定义的改变" class="headerlink" title="4.枚举宏定义的改变"></a>4.枚举宏定义的改变</h2><p>将<code>enum</code>修改为<code>NS_ENUM</code>将枚举的后置修改为前置</p>
+<h4 id="Old-Version"><a href="#Old-Version" class="headerlink" title="Old Version"></a>Old Version</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> &#123; </span><br><span class="line">  EnumType, </span><br><span class="line">  EnumTypeA, </span><br><span class="line">  EnumTypeB </span><br><span class="line">&#125; Type;</span><br></pre></td></tr></table></figure>
+<h4 id="Modern-Version"><a href="#Modern-Version" class="headerlink" title="Modern Version:"></a>Modern Version:</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span> Type) &#123; </span><br><span class="line">  EnumType, </span><br><span class="line">  EnumTypeA, </span><br><span class="line">  EnumTypeB </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="6-字典和数组的一些赋值和取值的方式"><a href="#6-字典和数组的一些赋值和取值的方式" class="headerlink" title="6.字典和数组的一些赋值和取值的方式"></a>6.字典和数组的一些赋值和取值的方式</h2><h3 id="6-1-字典"><a href="#6-1-字典" class="headerlink" title="6.1 字典"></a>6.1 字典</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[dict setObject:value forKey:key];</span><br><span class="line">dict[key] = value;</span><br><span class="line"><span class="keyword">id</span> value = [dict objectForKey: key]</span><br><span class="line"><span class="keyword">id</span> value = dict[key]</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-数组"><a href="#6-2-数组" class="headerlink" title="6.2 数组"></a>6.2 数组</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[array objectAtIndex:index]</span><br><span class="line">array[index]</span><br></pre></td></tr></table></figure>
+<h2 id="7-变量"><a href="#7-变量" class="headerlink" title="7. 变量"></a>7. 变量</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Manager</span> </span>&#123;</span><br><span class="line">    <span class="built_in">UIButton</span> *loginButton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">HHMyClass</span> ()</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">UIButton</span> *loginButton;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">HHMyClass</span></span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<h2 id="8-数组和字典的初始化"><a href="#8-数组和字典的初始化" class="headerlink" title="8. 数组和字典的初始化"></a>8. 数组和字典的初始化</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSNumber</span> *number = [<span class="built_in">NSNumber</span> numberWithInteger:<span class="number">7</span>];</span><br><span class="line"><span class="built_in">NSNumber</span> *modernNumber = @(<span class="number">7</span>); <span class="comment">// or @7</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">NSArray</span> *array = [<span class="built_in">NSArray</span> arrayWithObjects:number, modernNumber, <span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSArray</span> *modernArray = @[number, modernNumber];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSDictionary</span> *dictionary = [<span class="built_in">NSDictionary</span> dictionaryWithObjectsAndKeys:number, <span class="string">@"number"</span>];</span><br><span class="line"><span class="built_in">NSDictionary</span> *modernDictionary = @&#123;<span class="string">@"number"</span> : number&#125;;</span><br></pre></td></tr></table></figure>
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/07/ArKit简介/" title="ARKit简介">ARKit简介</a></h2>
+                <p class="excerpt">
+                
+                 
+ARKit是WWDC发布iOS11系统所新增框架。ARKit是一个移动AR平台，提供高层次的API，可在iOS 11 + A9芯片及以上（iPhone 6s起）上使用。
+Session 602 Introducing ARKit: Augmented Reality for iOS
+https:
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-07-15T07:31:40.000Z" class="post-list__meta--date date">2017-07-15</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
+</span><a class="btn-border-small" href="/2017/07/ArKit简介/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2016/12/iOS10中的通知/" title="iOS10中的通知">iOS10中的通知</a></h2>
+                <p class="excerpt">
+                
+                iOS10对推送通知的内容进行了一次大的重构，加入了一个新的框架 UserNotifications.framework 来集中管理和使用 iOS 系统中通知的功能，除此之外，还增加了很多额外的很好用的功能，比如：
+
+撤回一条通知
+更新已经展示的通知
+中途修改通知内容
+在通知中展示图片视频
+自定义通
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2016-12-24T11:30:29.000Z" class="post-list__meta--date date">2016-12-24</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
+</span><a class="btn-border-small" href="/2016/12/iOS10中的通知/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2023 - 本站使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题,
+        由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>OC进化简述 | Sai&#39;s Cabin</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="OC进化简述 | Sai&#39;s Cabin">
+    <meta name="twitter:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="OC进化简述 | Sai&#39;s Cabin">
+    <meta property="og:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    
+    <meta name="author" content="贺嘉炜">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Sai&#39;s Cabin" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://saidicaprio.com/2016/09/OC进化简述/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Sai&#39;s Cabin 的主页"><img src="/images/avatar.jpg" width="80" alt="Sai&#39;s Cabin logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Sai&#39;s Cabin">Sai&#39;s Cabin</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">落月摇情满江树</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Hi, I'm SaiDicaprio, a iOS Developer from China.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/">首页</a></li>
+            
+              <li class="navigation__item"><a href="./aboutme">关于</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/hjw6160602" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2016-09-28T08:37:46.000Z" class="post-list__meta--date date">2016-09-28</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">OC进化简述</h1>
+  </header>
+
+  <section class="post">
+    <p><code>Objective-C</code> 最初起源于 <code>NeXTSTEP</code> 操作系统，之后乔布斯回到苹果，便将它在OS X和iOS中继承了下来。<br>20世纪80年代初，<code>Brad Box</code>和<code>Tom Love</code>以<code>SmallTalk-80</code>语言为基础发明了<code>Objective-C</code>，<code>Smalltalk</code>是历史上第二个面向对象的程序设计语言，也就是说：Objective-C就是C语言面向对象SmallTalk语法话的结果。<br>让我们来看看早起SmallTalk的语法特点：</p>
+<blockquote>
+<p>在 Smalltalk 中一切皆对象，一切调用都是发消息</p>
+</blockquote>
+<p>比如下面的表达式：<br><figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> + <span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<p>它的意义是：向对象<code>2</code>发送消息<code>+</code>，参数为对象<code>3</code>。<br>再比如用一个工厂方法来实例化一个对象：<br><figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p := <span class="type">Person</span> name: <span class="string">'Sai DiCaprio'</span> age: <span class="number">12</span></span><br></pre></td></tr></table></figure></p>
+<p>为Person类添加一个方法<br><figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">greet: name  </span><br><span class="line">  | message | </span><br><span class="line">  message := <span class="string">'Hello '</span>, name. </span><br><span class="line">  <span class="type">Transcript</span> show: message.</span><br></pre></td></tr></table></figure></p>
+<p>在方法定义里，管道<code>|</code>包着的本地变量，然后是方法的实现，把<code>‘Hello’</code>放到了变量<code>message</code>里，然后用逗号符把它和变量<code>name</code>连接起来。<br><figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p := <span class="type">Person</span> new.</span><br><span class="line">p greet: <span class="string">'Jack'</span>.</span><br></pre></td></tr></table></figure></p>
+<p>这时Transcript会输出 <code>Hello Jack</code>。<br>从上可以看出，消息传递机制成了C语言进化为OC的最大障碍，要实现向一个<code>target ( class / instance )</code>发送消息名<code>selector</code> 动态寻找到函数实现地址<code>IMP</code>并调用，为了解决这一难题，需要提供一系列在<code>Build Time</code>无法实现的运行时函数支持，这些函数慢慢封装完整，便出现了一套API：<code>Runtime</code>。</p>
+<blockquote>
+<p>早期的Objective-C = C + Preprocessor + Runtime</p>
+</blockquote>
+<p>既然已经形成了一套健全的面向对象的C语言体系，那么我们来看看早期的<code>Objective-C</code> 代码是如何书写的<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="built_in">NSString</span> *_name;</span><br><span class="line">  <span class="keyword">int</span> _age;</span><br><span class="line">&#125;</span><br><span class="line">- (<span class="built_in">NSString</span> *)name;</span><br><span class="line">- (<span class="keyword">void</span>)setName:(<span class="built_in">NSString</span> *)name;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">int</span>)age;</span><br><span class="line">- (<span class="keyword">void</span>)setAge:(<span class="keyword">int</span>)age;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的代码声明了一个类<code>Person</code>，他有2个成员变量，并分别为其提供了<code>set</code>和<code>get</code>方法。</p>
+<p>秉着<code>谁创建，谁释放；谁引用，谁管理</code>的MRC原则，在实现文件中便有了下面的代码<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Person</span></span></span><br><span class="line">- (<span class="built_in">NSString</span> *)name&#123;</span><br><span class="line">  <span class="keyword">return</span> _name;</span><br><span class="line">&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setName:(<span class="built_in">NSString</span> *)name&#123;</span><br><span class="line">  <span class="keyword">if</span> (_name != name)&#123;</span><br><span class="line">    [_name release];</span><br><span class="line">    _name = [name <span class="keyword">copy</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> _name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">int</span>)age&#123;</span><br><span class="line">  <span class="keyword">return</span> _age;</span><br><span class="line">&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setAge:(<span class="keyword">int</span>)age&#123;</span><br><span class="line">  _age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看到，仅仅创建了2个变量就为类带来了这么大的代码量，在成员变量多的情况下，通篇垃圾代码，于是<code>Objective-C 2.0</code>马上就出现了新的语法<code>@property</code>关键字<br>它用来让编译器自动帮我们生成成员变量和其对应的get和set方法的声明。<br>比如Person类的声明中便化为这样：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span></span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *name;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">int</span> age;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意：这时的@property并不像现在一样会帮我们自动生成成员变量的setter和getter方法的实现</p>
+</blockquote>
+<p>在实现方面有另外一个关键字：<code>@synthesize</code>帮我们根据属性修饰符自动合成<code>setter</code>和<code>getter</code>的实现。<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Person</span></span></span><br><span class="line"><span class="keyword">@synthesize</span> name = _name;</span><br><span class="line"><span class="keyword">@synthesize</span> age = _age;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
+<p>后来自动合成的<code>@synthesize</code>可以不用写了，默认就是上面的代码。这样一来，整个类变得轻快了很多。<br>但是也会有这样的需求：比如不希望系统帮我们自动实现<code>setter</code>和<code>getter</code>，而由我们自己来实现，便出现了<code>@dynamic</code>关键字，虽然编译器会通过，但是如果在运行过程中方法调用了对应的<code>setter</code>和<code>getter</code>方法，但是发现没有手动实现那么就会崩溃报<code>unrecognized selector sent to instance 0x.......</code>的错误。编译时没问题，运行时才执行相应的方法，这就是所谓的动态绑定。</p>
+<p>##总结：</p>
+<blockquote>
+<ul>
+<li>@synthesize 告诉编译器帮我们合成属性的getter和setter的实现 </li>
+<li>@dynamic 告诉编译器不要帮我自动合成属性，而由我们自己实现getter和setter的实现</li>
+</ul>
+</blockquote>
+<p>##既然现在的@property会帮我们自动合成autosynthesize那么@dynamic和synthesize如今还有什么意义呢？</p>
+<p>回答这个问题前，我们要搞清楚一个问题，什么情况下不会autosynthesis（自动合成）？</p>
+<blockquote>
+<ul>
+<li>同时重写了 setter 和 getter 时</li>
+<li>重写了只读属性的 getter 时</li>
+<li>使用了 @dynamic 时</li>
+<li>在 @protocol 中定义的所有属性</li>
+<li>在 category 中定义的所有属性</li>
+<li>重载的属性</li>
+</ul>
+</blockquote>
+<p>当同时重写了setter和getter或者重写了只读属性的getter时，系统就不会帮我们自动合成，就意味着ivar也不会被生成，所以，这种情况下有两种方案：</p>
+<ul>
+<li>自己添加ivar</li>
+<li>使用@synthesize</li>
+</ul>
+<p>也就是说，当你想手动管理 <code>@property</code> 的所有内容时，你就会尝试通过实<code>@property</code> 的所有<code>存取方法</code>或者使用<code>@dynamic</code>来达到这个目的，这时编译器就会认为你打算手动管理 <code>@property</code>，于是编译器就禁用了自动合成。</p>
+<h4 id="另外，当你在子类中重载了父类中的属性，你必须-使用-synthesize-来手动合成ivar。"><a href="#另外，当你在子类中重载了父类中的属性，你必须-使用-synthesize-来手动合成ivar。" class="headerlink" title="另外，当你在子类中重载了父类中的属性，你必须 使用 @synthesize 来手动合成ivar。"></a>另外，当你在子类中重载了父类中的属性，你必须 使用 @synthesize 来手动合成ivar。</h4>
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2016/12/iOS10中的通知/" title="iOS10中的通知">iOS10中的通知</a></h2>
+                <p class="excerpt">
+                
+                iOS10对推送通知的内容进行了一次大的重构，加入了一个新的框架 UserNotifications.framework 来集中管理和使用 iOS 系统中通知的功能，除此之外，还增加了很多额外的很好用的功能，比如：
+
+撤回一条通知
+更新已经展示的通知
+中途修改通知内容
+在通知中展示图片视频
+自定义通
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2016-12-24T11:30:29.000Z" class="post-list__meta--date date">2016-12-24</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
+</span><a class="btn-border-small" href="/2016/12/iOS10中的通知/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2016/06/宇宙观/" title="宇宙观">宇宙观</a></h2>
+                <p class="excerpt">
+                
+                两朵乌云
+19世纪的最后一天，欧洲著名的科学为了庆祝新世纪的到来欢聚一堂，英国著名物理学家威廉.汤姆生（即开尔文男爵）发表了新年祝词。他在回顾物理学所取得的伟大成就时说，物理大厦已经落成，所剩只是一些修饰工作。同时他在展望20世纪物理学前景时，它的美丽而晴朗的天空却被两朵乌云笼罩了。
+
+
+1st. 
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2016-06-02T08:43:32.000Z" class="post-list__meta--date date">2016-06-02</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/且听风吟/">且听风吟</a>
+</span><a class="btn-border-small" href="/2016/06/宇宙观/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2023 - 本站使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题,
+        由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>

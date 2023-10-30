@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>性能优化 | Sai&#39;s Cabin</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="性能优化 | Sai&#39;s Cabin">
+    <meta name="twitter:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="性能优化 | Sai&#39;s Cabin">
+    <meta property="og:description" content="Hi, I&#39;m SaiDicaprio, a iOS Developer from China.">
+
+    
+    <meta name="author" content="贺嘉炜">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Sai&#39;s Cabin" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://saidicaprio.com/2019/05/性能优化/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Sai&#39;s Cabin 的主页"><img src="/images/avatar.jpg" width="80" alt="Sai&#39;s Cabin logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Sai&#39;s Cabin">Sai&#39;s Cabin</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">落月摇情满江树</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Hi, I'm SaiDicaprio, a iOS Developer from China.</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/">首页</a></li>
+            
+              <li class="navigation__item"><a href="./aboutme">关于</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/hjw6160602" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-05-22T04:21:09.000Z" class="post-list__meta--date date">2019-05-22</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">性能优化</h1>
+  </header>
+
+  <section class="post">
+    <h3 id="1-卡顿优化"><a href="#1-卡顿优化" class="headerlink" title="1.卡顿优化"></a>1.卡顿优化</h3><p>卡顿优化可以从两个层面切入<code>CPU</code>与<code>GPU</code></p>
+<h4 id="1-1-CPU卡顿优化"><a href="#1-1-CPU卡顿优化" class="headerlink" title="1.1 CPU卡顿优化"></a>1.1 <code>CPU</code>卡顿优化</h4><ul>
+<li>尽量使用轻量级的对象，比如用不到时间处理的地方，可以考虑使用<code>CALayer</code>代替<code>UIView</code></li>
+<li>不要频繁地调用UIView的相关属性，比如<code>frame</code>、<code>bounds</code>、<code>tansform</code>等属性，尽量减少不必要的修改</li>
+<li>尽量提前计算好布局，在有需要时一次性调整对应的属性，不要多次修改属性</li>
+<li><code>Autolayout</code>会比直接设置<code>frame</code>消耗更多的<code>CPU</code>资源（iOS12以上对<code>Autolayout</code>坐了优化）</li>
+<li>图片的<code>size</code>最好跟<code>UIImageView</code>的<code>size</code>一致</li>
+<li>控制一下线程的最大并发数量</li>
+<li>尽量把耗时操作放到子线程 <ul>
+<li>文本处理（尺寸计算、绘制：<code>boundingRectWit hSize</code>）</li>
+<li>图片处理（解码、绘制 <code>[UIImage imageWithName:]</code>）</li>
+</ul>
+</li>
+</ul>
+<p>拿到图片之后获取对应的CGImage</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIImageView</span> *imageView = [[<span class="built_in">UIImageView</span> alloc] init];</span><br><span class="line">imageView.frame = <span class="built_in">CGRectMake</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">56</span>);</span><br><span class="line">[<span class="keyword">self</span>.view addSubview:imageView];<span class="keyword">self</span>.imageView = imageView;</span><br><span class="line"></span><br><span class="line"><span class="built_in">dispatch_async</span>(dispatch_get_global_queue(<span class="number">0</span>, <span class="number">0</span>)^&#123;</span><br><span class="line">    <span class="comment">//创建一个位图上下文</span></span><br><span class="line">    <span class="built_in">CGImageRef</span> cgImage = [<span class="built_in">UIImage</span> imageWithName:<span class="string">@"img"</span>].CGImage;</span><br><span class="line">    <span class="comment">//拿到位图信息</span></span><br><span class="line">    <span class="built_in">CGBitmapInfo</span> bitmapInfo = kCGBitmapByteOrder32Host;</span><br><span class="line">    bitmapInfo |= hasAlpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst;</span><br><span class="line">    <span class="comment">//拿到图片大小</span></span><br><span class="line">    size_t width = <span class="built_in">CGImageGetWidth</span>(cgImage);</span><br><span class="line">    size_t height = <span class="built_in">CGImageGetHeight</span>(cgImage);</span><br><span class="line">    <span class="comment">//拿到位图上下文</span></span><br><span class="line">    <span class="built_in">CGContextRef</span> context = <span class="built_in">CGBitmapContextCreate</span>(<span class="literal">NULL</span>, width, height, <span class="number">8</span>, <span class="number">0</span>, <span class="built_in">CGColorSpaceCreateDeviceRGB</span>(), bitmapInfo);</span><br><span class="line">    <span class="comment">//画到对应的位图上下文去</span></span><br><span class="line">    <span class="built_in">CGContextDrawImage</span>(context, <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, width, height), cgImage);</span><br><span class="line">    <span class="comment">// get CGImage</span></span><br><span class="line">    cgImage = <span class="built_in">CGBitmapContextCreateImage</span>(context);</span><br><span class="line">    <span class="comment">// into UIImage</span></span><br><span class="line">    <span class="built_in">UIImage</span> *newImage = [<span class="built_in">UIImage</span> imageWithCGImage:cgImage];</span><br><span class="line">    <span class="comment">// release</span></span><br><span class="line">    <span class="built_in">CGContextRelease</span>(context);</span><br><span class="line">    <span class="built_in">CGImageRelease</span>(cgImage);</span><br><span class="line">    <span class="comment">//回到主线程绘制</span></span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="keyword">self</span>.imageView.image = newImage;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-GPU卡顿优化"><a href="#1-2-GPU卡顿优化" class="headerlink" title="1.2 GPU卡顿优化"></a>1.2 GPU卡顿优化</h4><ul>
+<li>尽量避免短时间内大量图片的显示，尽可能将多张图片合成一张进行显示</li>
+<li><code>GPU</code>能处理的最大文理尺寸是<code>4096x4096</code>，一单超过这个尺寸，就会占用<code>CPU</code>资源进行处理</li>
+<li>尽量减少视图数量和层级</li>
+<li>减少头透明的视图（<code>alpha&lt;1</code>），不透明的就设置<code>opaque</code>为<code>YES</code></li>
+<li>尽量避免出现离屏渲染</li>
+</ul>
+<h5 id="在OpenGL中，GPU有2种渲染方式"><a href="#在OpenGL中，GPU有2种渲染方式" class="headerlink" title="在OpenGL中，GPU有2种渲染方式"></a>在<code>OpenGL</code>中，<code>GPU</code>有2种渲染方式</h5><ul>
+<li><code>On-Screen Rendering</code>：当前屏幕渲染，在当前用于显示的屏幕缓冲区进行渲染操作</li>
+<li><code>Off-Screen Rendering</code>：离屏渲染，在当前屏幕缓冲区以外新开辟一个缓冲区进行渲染操作</li>
+</ul>
+<h5 id="离屏渲染消耗性能的原因"><a href="#离屏渲染消耗性能的原因" class="headerlink" title="离屏渲染消耗性能的原因"></a>离屏渲染消耗性能的原因</h5><ul>
+<li>需要创建新的缓冲区</li>
+<li>离屏渲染的整个过程，需要多次切换上下文环境</li>
+</ul>
+<p>先是从当前屏幕（<code>On-Screen</code>）切换到离屏（<code>Off-Screen</code>)等到离屏渲染结束以后，将离屏缓冲区的渲染结果显示到屏幕上，又需要将上下文环境从离屏切换到当前屏幕</p>
+<h5 id="哪些操作会触发离屏渲染？"><a href="#哪些操作会触发离屏渲染？" class="headerlink" title="哪些操作会触发离屏渲染？"></a>哪些操作会触发离屏渲染？</h5><ul>
+<li>光栅化，<code>layer.shouldRasterize = YES</code></li>
+<li>遮罩，<code>layer.mask</code></li>
+<li>圆角，同时设置<code>layer.masksToBounds = YES、layer.cornerRadius</code>大于0<ul>
+<li>考虑通过<code>CoreGraphics</code>绘制裁剪圆角，或者叫美工提供圆角图片</li>
+</ul>
+</li>
+<li>阴影，<code>layer.shadowXXX</code></li>
+<li>如果设置了<code>layer.shadowPath</code>就不会产生离屏渲染</li>
+</ul>
+<h4 id="1-3-解决方案"><a href="#1-3-解决方案" class="headerlink" title="1.3 解决方案"></a>1.3 解决方案</h4><p>平时所说的“卡顿”主要是因为在主线程执行了比较耗时的操作</p>
+<h5 id="利用Runloop监听状态"><a href="#利用Runloop监听状态" class="headerlink" title="利用Runloop监听状态"></a>利用<code>Runloop</code>监听状态</h5><p>可以添加Observer到主线程RunLoop中，通过监听RunLoop状态切换的耗时，以达到监控卡顿的目的</p>
+<h3 id="2-耗电优化"><a href="#2-耗电优化" class="headerlink" title="2. 耗电优化"></a>2. 耗电优化</h3><p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/test/1558020639.jpg" width="600"></p>
+<ul>
+<li><code>CPU</code>处理，<code>Processing</code></li>
+<li>网络，<code>Networking</code></li>
+<li>定位，<code>Location</code></li>
+<li>图像，<code>Graphics</code></li>
+</ul>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>尽可能降低<code>CPU</code>、<code>GPU</code>功耗</li>
+<li>少用定时器</li>
+<li>优化<code>I/O</code>操作<br>尽量不要频繁写入小数据，最好批量一次性写入<br>读写大量重要数据时，考虑用<code>dispatch_io</code>，其提供了基于<code>GCD</code>的异步操作文件<code>I/O</code>的<code>API</code>。用<code>dispatch_io</code>系统会优化磁盘访问<br>数据量比较大的，建议使用数据库（比如<code>SQLite</code>、<code>CoreData</code>）</li>
+<li>网络优化<ul>
+<li>减少、压缩网络数据</li>
+<li>如果多次请求的结果是相同的，尽量使用缓存</li>
+<li>使用断点续传，否则网络不稳定时可能多次传输相同的内容</li>
+<li>网络不可用时，不要尝试执行网络请求</li>
+<li>让用户可以取消长时间运行或者速度很慢的网络操作，设置合适的超时时间</li>
+<li>批量传输，</li>
+</ul>
+</li>
+</ul>
+<p>批量传输：比如，下载视频流时，不要传输很小的数据包，直接下载整个文件或者一大块一大块地下载。如果下载广告，一次性多下载一些，然后再慢慢展示。如果下载电子邮件，一次下载多封，不要一封一封地下载</p>
+<ul>
+<li>定位优化<ul>
+<li>如果只是需要快速确定用户位置，最好用<code>CLLocationManager</code>的<code>requestLocation</code>方法。定位完成后，会自动让定位硬件断电</li>
+<li>如果不是导航应用，尽量不要实时更新位置，定位完毕就关掉定位服务</li>
+<li>尽量降低定位精度，比如尽量不要使用精度最高的<code>kCLLocationAccuracyBest</code></li>
+<li>需要后台定位时，尽量设置<code>pausesLocationUpdatesAutomatically</code>为<code>YES</code>，如果用户不太可能移动的时候系统会自动暂停位置更新</li>
+<li>尽量不要使用<code>startMonitoringSignificantLocationChanges</code>，优先考虑<code>startMonitoringForRegion:</code></li>
+</ul>
+</li>
+<li>硬件检测优化<ul>
+<li>用户移动、摇晃、倾斜设备时，会产生动作(<code>motion</code>)事件，这些事件由加速度计、陀螺仪、磁力计等硬件检测。在不需要检测的场合，应该及时关闭这些硬件</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-启动优化"><a href="#3-启动优化" class="headerlink" title="3. 启动优化"></a>3. 启动优化</h3><p><code>APP</code>的启动可以分为2种</p>
+<ul>
+<li>冷启动（<code>Cold Launch</code>）：从零开始启动<code>APP</code></li>
+<li>热启动（<code>Warm Launch</code>）：<code>APP</code>已经在内存中，在后台存活着，再次点击图标启动<code>APP</code></li>
+</ul>
+<p><code>APP</code>启动时间的优化，主要是针对冷启动进行优化</p>
+<p>通过添加环境变量可以打印出APP的启动时间分析（<code>Edit scheme -&gt; Run -&gt; Arguments</code>）<br><code>DYLD_PRINT_STATISTICS</code>设置为1</p>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/test/1558021087.jpg" width="600"></p>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/test/1558021143.jpg" width="600"></p>
+<p>如果需要更详细的信息，那就将<code>DYLD_PRINT_STATISTICS_DETAILS</code>设置为1</p>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/test/1558021192.jpg" width="600"></p>
+<h4 id="APP的冷启动可以概括为3大阶段"><a href="#APP的冷启动可以概括为3大阶段" class="headerlink" title="APP的冷启动可以概括为3大阶段"></a>APP的冷启动可以概括为3大阶段</h4><ul>
+<li>dyld</li>
+<li>runtime</li>
+<li>main</li>
+</ul>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/test/1558021267.jpg" width="400"></p>
+<p><code>dyld（dynamic link editor）</code>，<code>Apple</code>的动态链接器，可以用来装载<code>Mach-O</code>文件（可执行文件、动态库等）</p>
+<h4 id="启动APP时，dyld所做的事情有"><a href="#启动APP时，dyld所做的事情有" class="headerlink" title="启动APP时，dyld所做的事情有"></a>启动<code>APP</code>时，<code>dyld</code>所做的事情有</h4><ul>
+<li>装载<code>APP</code>的可执行文件，同时会递归加载所有依赖的动态库</li>
+<li>当<code>dyld</code>把可执行文件、动态库都装载完毕后，会通知<code>Runtime</code>进行下一步的处理</li>
+</ul>
+<h4 id="启动APP时，runtime所做的事情有"><a href="#启动APP时，runtime所做的事情有" class="headerlink" title="启动APP时，runtime所做的事情有"></a>启动APP时，runtime所做的事情有</h4><ul>
+<li>调用<code>map_images</code>进行可执行文件内容的解析和处理</li>
+<li>在<code>load_images</code>中调用<code>call_load_methods</code>，调用所有<code>Class</code>和<code>Category</code>的<code>+load</code>方法</li>
+<li>进行各种<code>objc</code>结构的初始化（注册<code>Objc</code>类 、初始化类对象等等）</li>
+<li>调用<code>C++</code>静态初始化器和<code>__attribute__((constructor))</code>修饰的函数</li>
+</ul>
+<p>到此为止，可执行文件和动态库中所有的符号(<code>Class，Protocol</code>，<code>Selector</code>，<code>IMP</code>，<code>…</code>)都已经按格式成功加载到内存中，被<code>runtime</code> 所管理</p>
+<h4 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h4><ul>
+<li><code>APP</code>的启动由<code>dyld</code>主导，将可执行文件加载到内存，顺便加载所有依赖的动态库</li>
+<li>并由runtime负责加载成<code>objc</code>定义的结构</li>
+<li>所有初始化工作结束后，<code>dyld</code>就会调用<code>main</code>函数</li>
+<li>接下来就是<code>UIApplicationMain</code>函数，<code>AppDelegate</code>的<code>application:didFinishLaunchingWithOptions:</code>方法</li>
+</ul>
+<h4 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h4><p>按照不同的阶段</p>
+<h4 id="dyld"><a href="#dyld" class="headerlink" title="dyld"></a>dyld</h4><ul>
+<li>减少动态库、合并一些动态库（定期清理不必要的动态库）</li>
+<li>减少<code>Objc</code>类、分类的数量、减少<code>Selector</code>数量（定期清理不必要的类、分类）</li>
+<li>减少<code>C++</code>虚函数数量</li>
+<li><code>Swift</code>尽量使用<code>struct</code></li>
+</ul>
+<h4 id="runtime"><a href="#runtime" class="headerlink" title="runtime"></a>runtime</h4><ul>
+<li>用<code>+initialize</code>方法和<code>dispatch_once</code>取代所有的<code>__attribute__((constructor))</code>、<code>C++</code>静态构造器、<code>ObjC</code>的<code>+load</code></li>
+</ul>
+<h4 id="main"><a href="#main" class="headerlink" title="main"></a>main</h4><ul>
+<li>在不影响用户体验的前提下，尽可能将一些操作延迟，不要全部都放在<code>finishLaunching</code>方法中</li>
+<li>按需加载</li>
+</ul>
+<h3 id="4-瘦身方案"><a href="#4-瘦身方案" class="headerlink" title="4. 瘦身方案"></a>4. 瘦身方案</h3><h4 id="安装包（IPA）主要由可执行文件、资源组成"><a href="#安装包（IPA）主要由可执行文件、资源组成" class="headerlink" title="安装包（IPA）主要由可执行文件、资源组成"></a>安装包（<code>IPA</code>）主要由可执行文件、资源组成</h4><ul>
+<li>资源（图片、音频、视频等）</li>
+<li>采取无损压缩</li>
+<li>去除没有用到的资源： <code>LSUnusedResources</code></li>
+</ul>
+<h4 id="可执行文件瘦身"><a href="#可执行文件瘦身" class="headerlink" title="可执行文件瘦身"></a>可执行文件瘦身</h4><ul>
+<li>编译器优化</li>
+<li><code>Strip Linked Product</code>、<code>Make Strings Read-Only</code>、<code>Symbols Hidden by Default</code>设置为YES</li>
+<li>去掉异常支持，<code>Enable C++ Exceptions</code>、<code>Enable Objective-C Exceptions</code>设置为NO， <code>Other C Flags</code>添加<code>-fno-exceptions</code></li>
+</ul>
+<h4 id="利用AppCode检测未使用的代码：Code-gt-Inspect-Code"><a href="#利用AppCode检测未使用的代码：Code-gt-Inspect-Code" class="headerlink" title="利用AppCode检测未使用的代码：Code -&gt; Inspect Code"></a>利用<code>AppCode</code>检测未使用的代码：<code>Code -&gt; Inspect Code</code></h4><p>编写<code>LLVM</code>插件检测出重复代码、未被调用的代码</p>
+<ul>
+<li>生成<code>LinkMap</code>文件，可以查看可执行文件的具体组成</li>
+</ul>
+<p><img src="https://willjayh.oss-cn-shanghai.aliyuncs.com/test/1558021985.jpg" width="800"></p>
+<ul>
+<li>可借助第三方工具解析<code>LinkMap</code>文件</li>
+</ul>
+<h3 id="5-性能监控"><a href="#5-性能监控" class="headerlink" title="5. 性能监控"></a>5. 性能监控</h3><ul>
+<li>线上</li>
+<li>线下 <code>Instruments</code></li>
+</ul>
+<h4 id="5-1-线上监控"><a href="#5-1-线上监控" class="headerlink" title="5.1 线上监控"></a>5.1 线上监控</h4><ol>
+<li>遍历所有线程</li>
+<li>获取CPU使用率</li>
+<li>FPS线上监控</li>
+</ol>
+<ul>
+<li>通过<code>CADisplayLink</code>将方法调用频率与刷新率保持同步</li>
+<li>计算开始渲染时间与上次渲染时间差</li>
+<li><code>fps</code>计算 <code>fps = total / useTime</code></li>
+</ul>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2022/06/方法调用三大阶段/" title="方法调用三大阶段">方法调用三大阶段</a></h2>
+                <p class="excerpt">
+                
+                方法调用OC中的方法调用转换为 objc_msgSend来调用的 。
+下面的 一个实例对象person调用它的实例方法test：[person test] 等价于 objc_msgSend(person, @selector(test))
+objc_msgSend的执行流程可以分为三大阶段：
+
+消息
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2022-06-16T10:06:15.000Z" class="post-list__meta--date date">2022-06-16</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/iOS-底层原理/">iOS 底层原理</a>
+</span><a class="btn-border-small" href="/2022/06/方法调用三大阶段/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/05/多线程与锁/" title="iOS中的多线程与锁">iOS中的多线程与锁</a></h2>
+                <p class="excerpt">
+                
+                一、 iOS中的多线程方案
+1.GCD有2个概念需要了解：同步/步、队列
+同步和异步主要影响：能不能开启新的线程
+同步：在当前线程中执行任务，不具备开启新线程的能力
+异步：在新的线程中执行任务，具备开启新线程的能力
+
+并发和串行主要影响：任务的执行方式
+并发：多个任务并发（同时）执行
+串行：一个任务
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-05-17T08:52:02.000Z" class="post-list__meta--date date">2019-05-17</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
+</span><a class="btn-border-small" href="/2019/05/多线程与锁/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2023 - 本站使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题,
+        由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>
